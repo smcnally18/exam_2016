@@ -1,0 +1,557 @@
+---
+title: "McNally_Exam"
+author: "Sean McNally"
+date: "October 27, 2016"
+output: html_document
+---
+
+####1) Sampling your system (10 points)
+**Each of you has a study system your work in and a question of interest. Give an example of one variable that you would sample in order to get a sense of its variation in nature. Describe, in detail, how you would sample for the population of that variable in order to understand its distribution. Questions to consider include, but are not limited to: Just what is your sample versus your population? What would your sampling design be? Why would you design it that particular way? What are potential confounding influences of both sampling technique and sample design that you need to be careful to avoid? What statistical distribution might the variable take, and why?**
+
+START WITH A QUESTION: 
+Can amount of lipid energy reserves in corals prior to bleaching (i.e. warm water event) predict whether corals survive a natural bleaching event?
+
+Variable = Energy stores (Total lipids and lipid classes)?
+
+Effect/treatment = Temperature 
+
+What is your sample versus your population?
+
+Sample = individually tagged coral colonies across a longitudinal time gradient 
+
+Population = Coral reef communities at various sites located around Kiritimati, the largest coral reef atoll in the Central Pacific, that have differing physical oceanographic characteristics, zooplankton availability, and human disturbance gradients
+**(Note would like to scale this to Central Pacific coral reef communities but for the purpose of the data analysis the population would be considered coral reef communities that surround the island nation of Kiritimati)**
+
+Our individual samples at each reef site are a small snap shot, of the much larger coral reef community around Kiritimati 
+
+Sample design: 
+In order to quantify the amounts and classes of lipids, from individually tagged coral across a natural bleaching event we carried out an assessment of massive Porites coral energy stores. Observations are from individuals through time not random samples. A woodcarving chisel was used to obtain a small coral tissue sample between 0.5-2ml. Approximately 8-10 tagged coral colonies were sampled from each site across a total of 12 sites around the island. Prior to sampling, a photo was taken of the whole coral colony parallel to the colony surface with a ruler next to the colony for scaling in photo analysis. A macro photo was also taken of the colony surface for identification purposes. 
+
+Why is this a good design?  
+
+•	Replicates have an equal chance of being sampled across time assuming they survived the bleaching event and recovered 
+•	Samples were taken from the same general location on every coral colony. All colonies sampled were of the same size class (i.e. not recruits).  
+•	Before individual samples were tagged samples were chosen over a 60m transect with random samples about 1m off on each side of along the transect. 
+
+What are the potential confounding influences of both sampling techniques and sample design that you need to be careful to avoid?
+
+•	Bias from unequal representation b/c we are only working with one species.  
+•	Samples are not representative of the larger coral reef community which is composed of hundred of species  (not sure about this statement because as the coral communities across the island bleached Porites is the resilient species and is now representative of the coral communities found across the sites sampled).  
+•	Samples were taken across variable gradients. The gradient around the island is variable due to human disturbance, oceanographic variability, and wave action
+
+
+What statistical distribution might the variable take, and why?
+
+Essentially, this study is a longitudinal study with a treatment of heat across multiple coral colonies. We are interested in the variation in Y (coral fat) based on the condition of X (heat). Looking at this problem from this perspective I am hoping that the variable will take a normal distribution given the effect is relatively the same across all sites.  It would be awesome if the dataset could work out that way however, based off of the data collected the variable is not as fixed as we would hope and is more random. We have treatment of heat directly affecting the variable but across each site there is random variability in oceanographic variables as well as individual variability. Both of these need to be taken into account and have to be considered when constructing a model. Which is why, I think that a linear mixed effect model will be the best method to analyze my data set and will allow for each coral colony to respond differently to the treatment. I still think that one of these variables will take a normal distribution. 
+
+
+
+
+####2) Let’s get philosophical. (10 points)
+**Are you a frequentist, likelihoodist, or Bayesian? Why? Include in your answer why you prefer the inferential tools (e.g. confidence intervals, test statistics, posterior probabilities, etc.) of your chosen worldview and why you do not like the ones of the other one. This includes defining just what those different tools mean!**
+
+The knowledge I have obtained thus far in my career (based off of my traditional science upbringing through obtaining an undergraduate degree and through post undergrad work experience) I would consider myself a frequentist. However, after diving into the world of statistics as we move through the steps of this course, and my progression of knowledge of coral reef systems as I move through obtaining a graduate degree, I am becoming more and more of a Bayesian mindset. 
+
+During my undergraduate work I developed a novel aquaria-based laboratory study in which, I quantified interactions between corals and surrounding reef water planktonic bacteria. Using nine tanks of seawater, I analyzed microbial diversity through time in the surrounding seawater to track different populations of planktonic bacteria and to investigate how bacterial communities responded to the presence or absence of corals. 
+
+This study was largely experimental in which, I derived conclusions from repeated experiments and hypothesis testing. Within this testing I drew truth from my data through traditional statistical analyses, in which, I used student TTESTs and p-values to test against my null hypothesis. Student TTESTs and p-values were used draw statistical power in which to reject our null hypothesis when comparing across multiple replicated measurements . 
+
+With this straightforward frequentist approach I wanted used my test statistics to draw a conclusion drawn from repeated experiments. This allowed me to test against my null hypothesis Test.I then used this mindset to draw inferences to conclude that corals were selectively feeding on specific types of bacteria revealing not only that the organic matter and nutrients that are released by corals have an impact on the microbes in waters surrounding them, but the coral themselves play an important role, thus allowing me to reject my null hypothesis. This falsification of my null allowed me to evaluate the weight of evidence based off of my observed results. 
+
+Having just used p-values and confidence intervals in order to reject our null and draw power in which to make specific statistical statements we also calculated grazing rates in which we used p values with 95 confidence intervals to conclude which groups of bacteria corals may prefer. Using p values and confidence intervals we were able define a range and state our belief in which our calculated results fall in. The calculated p value explained our level of power where as our calculated CIs allowed for an estimated range of values that our calculations could fall in. CIs were used with our calculated p values because the grazing rates were unknown variables.
+
+We could have taken this analysis further with modeling approaches within likelihood and Bayesian frameworks given that my initial hypotheses were framed in such a way.  
+
+Using a likelihood approach to our data could have allowed us to ask more questions given the observed experimental data. Given the distribution of our data we could have looked at various hypotheses and evaluated the weight of evidence for different hypotheses such as: What is the likelihood/probability we observed the same repeated results over a longer experimental time frame and what is the likelihood we observe the same results given different environmental parameters (i.e ocean acidification affects, or eutrophication). We could have modeled our repeated results within this framework and used either a Bayesian or likelihood approach. 
+
+My initial lack of specific knowledge for coral reef communities limited the questions that I could ask. This allowed me to be somewhat blocked within one type of framework and is why I preferred it at the time (not knowing there was more to it!). I still believe that I needed frequentists mindset in my initial observed results and it is still hard for me to say that I would have worked in Bayesian mindset.  
+
+I do see that moving forward and gaining new insights into cora reef systems I am able to account for more variability. This will allow me to grow into a new Bayesian mindset. That being said Bayesian thinking is still somewhat foreign to me and will take me sometime to transition from my more traditional frequentist ideologies. I do see how a Bayesian mindset allows me to incorporate posterior probabilities in which allow me to test my hypotheses in a new way. Specifically, in the case of my previous work with a Bayesian approach I would be able to discuss my degree of belief in our value (grazing rates) across all reefs given my observed results and my knowledge of how grazing is affected by variability. With this knowledge I can ask many questions by incorporating this data in order to evaluate the probability of many different hypotheses given the data. Where as in a frequentist and likelihood mindset I would be looking at the probability of data given my initial hypotheses. 
+
+
+
+####3) Power (20 points)
+**We have a lot of aspects of the sample of data that we collect which can alter the power of our linear regressions.**
+
+#####SET UP SIMULATION  
+**slope = 0.00237, intercept=115.767, sigma = 5.6805, range of seal ages = 958 to 8353, or, if you prefer, seal ages ∼∼ N(3730.246, 1293.485). Your call what distribution to use for seal age simulation.**
+```{r, echo=TRUE, cache=TRUE, warning=FALSE, message=FALSE}
+#load libraries
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(purrr)
+library(broom)
+#1. Get coefficients - either from data, or that you guess 
+#put together a set of parameters
+sim_pop_n <- data.frame(
+  slope = 0.00237,
+  samp_size = 4:20
+) %>%
+  crossing(resid_sd = seq(3:10)) %>%
+  crossing(intercept = 113:116) %>%
+  
+  #2. Set up your sampling for each set of coefficients 
+  group_by(intercept, slope, resid_sd, samp_size) %>%
+  expand(reps = 1:samp_size) %>%
+  ungroup() %>%
+  
+  #3. Replicate each 'study' for some number of simulations 
+  crossing(sim = 1:100) %>%
+  
+  #4. Populate with predictors
+  mutate(age.days = runif(n(), 958, 8553)) %>%
+  
+  #5. Based on your model populate with responses 
+  mutate(length.cm = rnorm(n(), intercept + slope * age.days, resid_sd))
+
+
+#####
+# Fit a lot of models 
+#####
+fit_n <- sim_pop_n %>%
+  
+  #1. Group by simulation and parameters 
+  group_by(sim, slope, intercept, samp_size, resid_sd) %>%
+  nest() %>%
+  
+  #2. Fit a model to this data 
+  mutate(mod = purrr::map(data, ~lm(length.cm ~ age.days, data = .))) %>%
+  
+  #3. Extract coefficients and p values 
+  mutate(coefs = purrr::map(mod, ~tidy(.))) %>%
+  
+  
+  #4. Clean up 
+  unnest(coefs) %>%
+  ungroup() %>%
+  filter(term == "age.days")
+```
+
+
+#####HOW DOES POWER RELATE TO INTERCEPT, RESID_SD, AND SAMPLE SIZE 
+**Choose three of the above properties and demonstrate how they alter power of an F-test from a linear regression using at least three different alpha levels (more if you want!) As a baseline of the parameters, let’s use the information from the seal data.**  
+1. Slope  
+
+2. Intercept
+```{r, echo=TRUE, cache=TRUE, warning=FALSE, message=FALSE}
+pow_intercept <- fit_n %>%
+  crossing(alpha = c(0.05, 0.01, 0.001)) %>%
+  #1. Group by parameters that vary 
+  group_by(intercept, alpha) %>%
+  
+  #2. Calculate type II error rate 
+  mutate(type_2_error =sum(p.value > alpha)/n()) %>%
+  ungroup() %>%
+  
+  #3. Calculate power
+  mutate(power = 1 - type_2_error)
+
+#plot!
+ggplot(data = pow_intercept, 
+       mapping = aes(x = intercept, y = power, color = factor(alpha))) +
+  geom_point() +
+  geom_line() +
+  theme_bw()
+```
+At the defined alpha values for the simulated seal data our analysis of power shows that a variable intercept show little variance and does not seem to alter power of an F-test from our linear regression.  
+
+
+3. Residual variance
+```{r, echo=TRUE, cache=TRUE, warning=FALSE, message=FALSE}
+pow_sigma <- fit_n %>%
+  crossing(alpha = c(0.05, 0.01, 0.001)) %>%
+  #1. Group by parameters that vary 
+  group_by(resid_sd, alpha) %>%
+  
+  #2. Calculate type II error rate 
+  mutate(type_2_error =sum(p.value > alpha)/n()) %>%
+  ungroup() %>%
+  
+  #3. Calculate power
+  mutate(power = 1 - type_2_error)
+
+#plot!
+ggplot(data = pow_sigma, 
+       mapping = aes(x = resid_sd, y = power, color = factor(alpha))) +
+  geom_point() +
+  geom_line() +
+  theme_bw()
+```
+At the defined alpha values for the simulated seal data our analysis of power shows that as sigma or redisual_sd increases our power of an F-test from our linear regression decreases (especially at higher alpha levels i.e. 0.0001).  
+
+
+4. Sample Size
+```{r, echo=TRUE, cache=TRUE, warning=FALSE, message=FALSE}
+pow_n <- fit_n %>%
+  crossing(alpha = c(0.05, 0.01, 0.001)) %>%
+  #1. Group by parameters that vary 
+  group_by(samp_size, alpha) %>%
+  
+  #2. Calculate type II error rate 
+  mutate(type_2_error =sum(p.value > alpha)/n()) %>%
+  ungroup() %>%
+  
+  #3. Calculate power
+  mutate(power = 1 - type_2_error)
+
+#plot!
+ggplot(data = pow_n, 
+       mapping = aes(x = samp_size, y = power, color = factor(alpha))) +
+  geom_point() +
+  geom_line() +
+  theme_bw()
+```  
+At the defined alpha values for the simulated seal data our analysis of power shows that as sample size increases the power of an F-test from our linear regression as increases.  
+
+
+5. Range of X values   
+
+####4) Quailing at the Prospect of Linear Models  
+**I’d like us to walk through the three different ‘engines’ that we have learned about to fit linear models. To motivate this, we’ll look at Burness et al.’s 2012 study “Post-hatch heat warms adult beaks: irreversible physiological plasticity in Japanese quail "http://rspb.royalsocietypublishing.org/content/280/1767/20131436.short the data for which they have made available at Data Dryad at "http://datadryad.org/resource/doi:10.5061/dryad.gs661". We’ll be looking at the morphology data.**
+
+```{r, echo=TRUE, cache=TRUE, warning=FALSE, message=FALSE}
+#load data 
+beaks <- read.csv('Morphology data.csv')
+str(beaks)
+
+#remove na from data.frame
+beaks <- na.omit(beaks)
+
+#plot
+ggplot(beaks, aes(x = Tarsus..mm. ,y = Culmen..mm.)) +
+  geom_point() +
+  theme_bw()
+```
+
+####4.1 Three fits (10 points)
+**To begin with, I’d like you to fit the relationship that describes how Tarsus (leg) length predicts upper beak (Culmen) length. Fit this relationship using least squares, likelihood, and Bayesian techniques. For each fit, demonstrate that the necessary assumptions have been met. Note, functions used to fit with likelihood and Bayes may or may not behave well when fed NAs. So look out for those errors.**
+
+LEAST SQUARES
+```{r, echo=TRUE, cache=TRUE, warning=FALSE, message=FALSE}
+#fit model 
+beaks_lm <- lm(Culmen..mm. ~ Tarsus..mm., data = beaks)
+
+#Test our assumptions 
+plot(beaks_lm)
+
+#cook's distance 
+plot(beaks_lm, which = 4) #cook's distance how far a value is away from the population mean 
+
+#distribution of residuals 
+res_beaks <- residuals(beaks_lm)
+hist(res_beaks)
+
+#test!
+anova(beaks_lm)
+
+#coefficients..r^2
+summary(beaks_lm)
+
+#Place into more condensed form to compare against other models (question 4.2)
+library(broom)
+tidy(beaks_lm)
+tidy(anova(beaks_lm))
+confint(beaks_lm)
+```
+
+LIKELIHOOD
+```{r, echo=TRUE, cache=TRUE, warning=FALSE, message=FALSE}
+#1. What is our data?
+hist(beaks$Tarsus..mm.)
+
+##### Fit a mle2 object
+#load libraries
+library(bbmle)
+
+beaks_fit <- mle2(Culmen..mm. ~ dnorm(b0 + b1 * Tarsus..mm., resid_sd), #likelihood function
+                 data = beaks, #data
+                 start = list(b0 = 3, b1 = 3, resid_sd = 5)) #list for the likelihood function, tried multiple values and 3, 3, and 5 were the first to allow convergence without convergence warning 
+
+#check out the distribution of our residuals!
+res <- residuals(beaks_fit)
+qqnorm(res)
+qqline(res)
+
+#fitted v. residuals
+fitted_beaks <- predict(beaks_fit)
+qplot(fitted_beaks, res) + theme_bw()
+
+#plot the profile likelihoods
+plot(profile(beaks_fit))
+
+plot(profile(beaks_fit, which = "b0", std.err = 0.05))
+
+##### Evaluate output
+summary(beaks_fit)
+confint(beaks_fit, method = "quad")
+
+#Place into more condensed form to compare against other models (question 4.2)
+tidy(beaks_fit)
+
+# Fit an alternate model
+beaks_fit_null <- mle2(Culmen..mm.~ dnorm(b0, resid_sd), #likelihood function
+                      data = beaks, #data
+                      start = list(b0 = 3, resid_sd = 5))
+
+logLik(beaks_fit)
+logLik(beaks_fit_null)
+
+#LRT
+anova(beaks_fit, beaks_fit_null)
+```
+
+BAYESIAN
+```{r, echo=TRUE, cache=TRUE, warning=FALSE, message=FALSE}
+#load libraries 
+library(rstanarm)
+library(readr)
+
+#set our cores
+options(mc.cores = parallel::detectCores())
+
+#Fit our model!
+beaks_lm_bayes <- stan_glm(Culmen..mm. ~ Tarsus..mm.,
+                          data = beaks, 
+                          family = gaussian()) #because we are using a glm we have to tell it what our data error processing is 
+
+#######Diagnostics 
+plot(beaks_lm_bayes, plotfun = "stan_trace")
+coef(beaks_lm_bayes)
+plot(beaks_lm_bayes, show_density = TRUE, pars = "(Intercept)")
+plot(beaks_lm_bayes, show_density = TRUE, pars = "Tarsus..mm.", ci_level = 0.2) #confidence level to draw inferences about data 
+plot(beaks_lm_bayes, show_density = TRUE, pars = "sigma")
+
+#autocorellation in our chains 
+plot(beaks_lm_bayes, plotfun = "stan_ac") #should tail off 
+
+#Model looks correct based off of diagonsistics run, good to move on
+
+#standard diagnostics 
+#residuals vs fitted 
+plot(fitted(beaks_lm_bayes, residuals(morph_lm_bayes)))
+#qqplot  (evauluating a noraml data error generating process)
+qqnorm(residuals(beaks_lm_bayes))
+qqline(residuals(beaks_lm_bayes))
+
+#posterior predictive dist (pp = posterior check)
+pp_check(beaks_lm_bayes, nreps = 3)
+
+pp_check(beaks_lm_bayes, check = "residuals")
+
+pp_check(beaks_lm_bayes, check = "scatter")
+
+pp_check(beaks_lm_bayes, check = "test", test = c("mean", "sd"))
+
+#All looks good. Peaks follow the same distrubtion more or less. 
+
+########### Coefficients!
+plot(beaks_lm_bayes, pars = "Tarsus..mm.")
+summary(beaks_lm_bayes, digits = 5)
+
+posterior_interval(beaks_lm_bayes)
+
+#posterior vs prior
+
+#data seems to overwhelm our prior?????
+posterior_vs_prior(beaks_lm_bayes, pars="Tarsus..mm.")
+
+
+#Place into more condensed form to compare against other models (question 4.2)
+tidy(beaks_lm_bayes)
+```
+
+####4.2 Three interpretations (10 points)
+**OK, now that we have fits, take a look! Do the coefficients and their associated measures of error in their estimation match? How would we interpret the results from these different analyses differently? Or would we? Note, confint works on lm objects as well.**
+
+```{r, echo=TRUE, cache=TRUE, warning=FALSE, message=FALSE}
+#least sqs
+tidy(beaks_lm)
+confint(beaks_lm)
+
+#Likelihood
+tidy(beaks_fit)
+confint(beaks_fit, method = "quad")
+
+#Bayes
+tidy(beaks_lm_bayes)
+posterior_interval(beaks_lm_bayes)
+```
+
+The relationship from the three different analyses describes how Tarsus (leg) length predicts upper beak (Culmen) length. Although, we are trying to describe the same relationship we did so in three very different ways. 
+
+In our least squares method we took a frequentist approach where we had the goal of describing the probability of obtaining the Tarsus predicating beak size relationship. In this mindset we used our test statistics (Tarsus estimate = 0.37292677, p value = 3.23x10-273) to reject the null hypothesis. This would be interpreted as a fixed value and only Tarsus lengths at that size predicts the Culmen length.  
+
+In our second approach to describing this relationship we took a likelihoodist approach, in which, we looked at the probability of obtaining this relationship given our hypothesis. In this case we would use the generated test statistics similarly, to our first approach to look at the relationship, but this approach also allows us to evaluate the weight of evidence for different hypotheses and not just in rejection of our null. This likelihoodist framework allows for a little bit more freedom in our predictions and probabilities because of the model type framework we worked in. This allows for our description of our relationship to not be fixed upon one prediction.  
+
+Our Bayesian approach allows us to look at our relationship differently in that now we can assert probabilities to our relationship and it is not a fixed value of how the world of this bird morphology relationship works. In that Culmen length only predicts Tarsus given a specific length. In our Bayesian framework we now have the power, using the knowledge of how the world bird morphology works, that given a specific Culmen length we can give a specific probability with varying levels of freedom that the Tarsus length will be X.  
+
+####4.3 Every Day I’m Profilin’ (10 points)
+**Generate the profile 95% and 75% confidence intervals by Brute Force for the slope and intercept from the Likelihood model. Note, to do this, you will need to refit some models and use the fixed argument with mle2 (e.g., fixed = c(b0 = 3). Check yourself against the confint results from the mle2 fit. The logLik function will help you out to extract log likelihoods from fit models. Plot the profiles along with reporting the values of the CIs.** 
+```{r, echo=TRUE, cache=TRUE, warning=FALSE, message=FALSE}
+library(tidyr)
+resid_sd <- sd(res)
+
+#Make a 2by2 data frame of our parameters
+Culmen <- beaks$Culmen..mm.
+Tarsus <- beaks$Tarsus..mm.
+
+beaks_data_frame <- data.frame(Culmen = beaks$Culmen..mm.,
+                               Tarsus = beaks$Tarsus..mm.)
+x2 <- na.omit(beaks_data_frame)
+
+#What is our data?
+ggplot(data = x2, mapping = aes(x = Tarsus, y = Culmen)) + 
+  geom_point() + theme_bw()
+
+#Setup a data frame with a lot of possible parameter values (brute force) for each point. We are trying to find the log likelihood with the slope or intercept fixed to each value. Slope and intercept separate! Mutate(loglikelihood = logLik(mle2 fixed argument, b1=etc))
+
+morph_mle_b0 <- data.frame(b0 = seq(-1, 1, by = 0.01)) %>%
+  rowwise() %>%
+  mutate(log_lik = logLik(mle2(Culmen ~ dnorm(b0 + b1*Tarsus, resid_sd),
+                               data = x2,
+                               start=list(b0 = 2, b1= 2, resid_sd = 2),
+                               fixed = list(b0 = b0)))) %>%
+  ungroup()
+
+#b0 summary
+summary(morph_mle_b0)
+
+#visualize
+qplot(b0, log_lik, data = morph_mle_b0) + theme_bw()
+
+
+#b1 MLE
+morph_mle_b1 <- data.frame(b1 = seq(0.2, 0.5, by = 0.01)) %>%
+  rowwise() %>%
+  mutate(log_lik = logLik(mle2(Culmen ~ dnorm(b0 + b1*Tarsus, resid_sd),
+                               data = x2,
+                               start = list (b0 = 2, b1 = 2, resid_sd = 2),
+                               fixed = list(b1 = b1)))) %>%
+  ungroup()
+
+#b1 Summary 
+summary(morph_mle_b1)
+
+#visualize
+qplot(b1, log_lik, data = morph_mle_b1) + theme_bw()
+
+#Have max log likelihood estimate from initial fit.
+
+#max mle b0
+morph_b0_max <- morph_mle_b0 %>%
+  group_by(b0) %>%
+  filter(log_lik == max(log_lik)) %>%
+  ungroup()
+
+#max mle b1
+morph_b1_max <- morph_mle_b1 %>%
+  filter(log_lik == max(log_lik)) %>%
+  ungroup()
+ 
+#Get CIs fron max profile… no need to show on graph
+#b0 95% CI
+morph_b0_max %>%
+  filter(log_lik > max(log_lik) - 1.92) %>%
+  filter(row_number()==1 | row_number()==n())
+
+#b0 75% CI
+morph_b0_max %>%
+  filter(log_lik > max(log_lik) - 0.66) %>%
+  filter(row_number()==1 | row_number()==n())
+
+#b1 95% CI (not sure why they are the same!!!!)
+morph_b1_max %>%
+  filter(log_lik > max(log_lik) - 1.92) %>%
+  filter(row_number()==1 | row_number()==n())
+
+#b1 75% CI
+morph_b1_max %>%
+  filter(log_lik > max(log_lik) - 0.66) %>%
+  filter(row_number()==1 | row_number()==n())
+```
+
+####4.4 The Power of the Prior (10 points)
+**This data set is pretty big. After excluding NAs in the variables we’re interested in, it’s over 766 lines of data! Now, a lot of data can overhwelm a strong prior. But only to a point. Show first that there is enough data here that a prior for the slope with an estimate of 0.4 and a sd of 0.01 is overwhelmed by the data, and produces similar results to our already fit flat prior. Second, see if a very small sample size would at least include 0.4 in it’s 95% Credible Interval. Last, demonstrate at what sample size that 95% CL first begins to include 0.4 when we have a strong prior. How much data do we really need to overcome our prior belief?**
+```{r, echo=TRUE, cache=TRUE, warning=FALSE, message=FALSE}
+
+#show first that there is enough data here that a prior for the slope with an estimate of 0.4 and a sd of 0.01 is overwhelmed by the data, and produces similar results to our already fit flat prior
+
+beaks_lm_bayes_prior <- stan_glm(Culmen..mm. ~ Tarsus..mm.,
+                                data = beaks,
+                                family=gaussian(),
+                                prior = normal(0.4,0.01))
+
+posterior_interval(beaks_lm_bayes_prior)                              
+
+posterior_vs_prior(beaks_lm_bayes_prior, pars="Tarsus..mm.")
+
+
+#Second, see if a very small sample size would at least include 0.4 in it’s 95% Credible Interval.
+
+beaks_data_frame_2 <- data.frame(Culmen = beaks$Culmen..mm. [1:10], #small samp size 
+                                 Tarsus = beaks$Tarsus..mm. [1:10])
+
+
+beaks_lm_bayes_2 <- stan_glm(beaks_data_frame_2,
+                          data = beaks, 
+                          family = gaussian(),
+                          prior = normal(0.4,0.01))
+tidy(beaks_lm_bayes_2)
+posterior_interval(beaks_lm_bayes_2) 
+#0.4 is not included in our 95% CI, but was it ever? even at 766? I still keep getting around .397 or .398. Is it my prior function? 
+
+posterior_vs_prior(beaks_lm_bayes_2, pars="Tarsus")
+
+#Last, demonstrate at what sample size that 95% CL first begins to include 0.4 when we have a strong prior. How much data do we really need to overcome our prior belief?**
+
+#sample size of 100 of beak data set 
+beaks_data_frame_3 <- data.frame(Culmen = beaks$Culmen..mm. [1:100], 
+                                 Tarsus = beaks$Tarsus..mm. [1:100])
+
+beaks_lm_bayes_3 <- stan_glm(beaks_data_frame_3,
+                          data = beaks, 
+                          family = gaussian(),
+                          prior = normal(0.4,0.01))
+
+posterior_interval(beaks_lm_bayes_3)
+
+posterior_vs_prior(beaks_lm_bayes_3, pars="Tarsus")
+
+#sample size 300 of beak data set 
+beaks_data_frame_4 <- data.frame(Culmen = beaks$Culmen..mm.[1:300], 
+                                 Tarsus = beaks$Tarsus..mm.[1:300])
+
+
+beaks_lm_bayes_4 <- stan_glm(beaks_data_frame_4,
+                          data = beaks, 
+                          family = gaussian(),
+                          prior = normal(0.4, 0.01))
+
+posterior_interval(beaks_lm_bayes_4)
+
+#sample size 500 of beak data set 
+beaks_data_frame_5 <- data.frame(Culmen = beaks$Culmen..mm.[1:450], 
+                                 Tarsus = beaks$Tarsus..mm.[1:450])
+
+beaks_lm_bayes_5 <- stan_glm(beaks_data_frame_5,
+                          data = beaks, 
+                          family = gaussian(),
+                          prior = normal(0.4, 0.01))
+
+posterior_interval(beaks_lm_bayes_5)
+
+#sample size 25 of beak data set 
+beaks_data_frame_6 <- data.frame(Culmen = beaks$Culmen..mm.[1:20], 
+                                 Tarsus = beaks$Tarsus..mm.[1:20])
+
+
+beaks_lm_bayes_6 <- stan_glm(beaks_data_frame_6,
+                          data = beaks, 
+                          family = gaussian(),
+                          prior = normal(0.4, 0.01))
+
+posterior_interval(beaks_lm_bayes_6)
+```
+
+I am not sure why I cannot get my posterior_interval 95% CI to include 0.4. I can get it close but thats it. Would this mean that the prior we are placing on our model is wrong? Since our observed data never falls in that range? IS THIS A TRICK Question!?!? With this the closest I could get to a 0.4 prior belief was with a smaller sample size. Maybe we don't need as many samples in order to meet our prior. But a smaller sample size decreases our power. But since we are setting the prior we are basically telling the model how we think the world works? Is the data incorrect for our prior belief since we can never get our data to meet that prior?
